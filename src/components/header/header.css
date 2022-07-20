@@ -1,0 +1,24 @@
+.Header {
+  font-family: "Mukta";
+  font-size: x-large;
+  display: flex;
+  background-color: #746cfe;
+  width: 100%;
+  padding: 0px 20px 0 20px;
+  align-items: center;
+}
+
+.Header > ul {
+  display: flex;
+  width: 100%;
+  gap: 60px;
+  justify-content: flex-start;
+  list-style: none;
+}
+
+a,
+li {
+  color: #242132;
+  text-decoration: none;
+  cursor: pointer;
+}
