@@ -1,7 +1,15 @@
 import "./list.css";
+
 import api from "../../api/index";
+
 import { useEffect, useState } from "react";
-import { Card } from "../card/card";
+
+import { Navigation, Autoplay } from "swiper";
+import "swiper/css";
+import "swiper/css/bundle";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import Card from "../card/card";
 
 export const List = () => {
   const [games, setGames] = useState([]);
@@ -18,16 +26,30 @@ export const List = () => {
 
   return (
     <div id="list">
-      {games.map((game) => {
-        return (
-          <Card
-            title={game.title}
-            cover_image_url={game.cover_image_url}
-            score={game.score}
-            year={game.year}
-          />
-        );
-      })}
+      <Swiper
+        spaceBetween={10}
+        slidesPerView={3}
+        rewind={true}
+        modules={[Navigation, Autoplay]}
+        navigation
+        autoplay={{
+          delay: 10000,
+          disableOnInteraction: true,
+        }}
+      >
+        {games.map((game) => {
+          return (
+            <SwiperSlide>
+              <Card
+                title={game.title}
+                cover_image_url={game.cover_image_url}
+                year={game.year}
+                score={game.score}
+              />
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
     </div>
   );
 };

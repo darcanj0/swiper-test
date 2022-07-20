@@ -12,3 +12,5 @@ export const Card = ({ title, cover_image_url, score, year }) => {
     </div>
   );
 };
+
+export default Card;
