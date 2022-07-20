@@ -2,10 +2,6 @@ import "./header.css";
 import Switch from "react-switch";
 
 export const Header = ({ darkTheme, setDarkTheme }) => {
-  const handleThemeChange = () => {
-    setDarkTheme(!darkTheme);
-  };
-
   return (
     <div className="Header">
       <ul>
@@ -17,7 +13,7 @@ export const Header = ({ darkTheme, setDarkTheme }) => {
         <li>Discover</li>
         <li>About us</li>
       </ul>
-      <Switch onChange={handleThemeChange} checked={darkTheme} />
+      <Switch onChange={() => setDarkTheme(!darkTheme)} checked={darkTheme} />
     </div>
   );
 };
