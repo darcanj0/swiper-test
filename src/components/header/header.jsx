@@ -13,7 +13,13 @@ export const Header = ({ darkTheme, setDarkTheme }) => {
         <li>Discover</li>
         <li>About us</li>
       </ul>
-      <Switch onChange={() => setDarkTheme(!darkTheme)} checked={darkTheme} />
+      <Switch
+        onChange={() => setDarkTheme(!darkTheme)}
+        checked={darkTheme}
+        checkedIcon={false}
+        uncheckedIcon={false}
+        onColor={"#242132"}
+      />
     </div>
   );
 };
